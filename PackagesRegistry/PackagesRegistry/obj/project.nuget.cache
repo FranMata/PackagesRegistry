@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/X4w9nCOiBT6cRtdWCsdMaZpwcP2wk1H2a4GwCgmj5shGoTHjrIsIzVOlrSEUKxFrMaFSN9d9R5R15G0QZ0Qfg==",
+  "success": true,
+  "projectFilePath": "I:\\Nueva carpeta (2)\\UNED\\PROGRAMACION AVANZADA EN WEB\\Proyecto2\\PackagesRegistry\\PackagesRegistry\\PackagesRegistry.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
