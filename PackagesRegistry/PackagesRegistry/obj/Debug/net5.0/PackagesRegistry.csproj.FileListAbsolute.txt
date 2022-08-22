@@ -69,3 +69,4 @@ I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto2\PackagesRegistr
 I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto2\PackagesRegistry\PackagesRegistry\obj\Debug\net5.0\PackagesRegistry.genruntimeconfig.cache
 I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto2\PackagesRegistry\PackagesRegistry\obj\Debug\net5.0\Razor\Views\TransportCompany\Index.cshtml.g.cs
 I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto2\PackagesRegistry\PackagesRegistry\obj\Debug\net5.0\Razor\Views\Driver\Index.cshtml.g.cs
+I:\Nueva carpeta (2)\UNED\PROGRAMACION AVANZADA EN WEB\Proyecto2\PackagesRegistry\PackagesRegistry\obj\Debug\net5.0\Razor\Views\Client\Index.cshtml.g.cs
