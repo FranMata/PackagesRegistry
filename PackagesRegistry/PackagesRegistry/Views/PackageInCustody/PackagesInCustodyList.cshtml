@@ -1,0 +1,36 @@
+﻿@using PackagesRegistry.Models;
+@model List<PackagesInCustody>
+
+<h1>Paquetes en custodia</h1>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id del Cliente</th>
+            <th>Nombre del Cliente</th>
+            <th>Id del Conductor</th>
+            <th>Numero de Tracking</th>
+            <th>Descripcion</th>
+            <th>Peso</th>
+            <th>Precio</th>
+            <th>Fecha de ingreso</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (PackagesInCustody package in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(e => package.ClientId)</td>            
+            <td>@Html.DisplayFor(e => package.Client.Name)</td>
+            <td>@Html.DisplayFor(e => package.DriverId)</td>
+            <td>@Html.DisplayFor(e => package.TrackingId)</td>
+            <td>@Html.DisplayFor(e => package.Description)</td>
+            <td>@Html.DisplayFor(e => package.Weight)</td>
+            <td>@Html.DisplayFor(e => package.Price)</td>
+            <td>@Html.DisplayFor(e => package.Date)</td>
+        </tr>
+        }
+    </tbody>
+</table>

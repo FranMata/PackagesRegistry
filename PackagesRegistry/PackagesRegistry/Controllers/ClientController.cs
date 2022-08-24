@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PackagesRegistry.Models;
 using PackagesRegistry.Models.ViewModels;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace PackagesRegistry.Controllers
@@ -29,6 +30,22 @@ namespace PackagesRegistry.Controllers
             _context.Add(clientEF);
             _context.SaveChanges();
             return View();
+        }
+
+        public IActionResult ClientList()
+        {
+            List<ClientViewModel> clients = new List<ClientViewModel>();
+
+            _context.Clients.ToList().ForEach(e =>
+            {
+                clients.Add(new ClientViewModel()
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    DocumentId = e.DocumentId
+                });
+            });
+            return View(clients);
         }
     }
 }
