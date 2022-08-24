@@ -1,0 +1,27 @@
+﻿@using PackagesRegistry.Models.ViewModels;
+@model List<ClientViewModel>
+
+<h1>Clientes</h1>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Cedula</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (ClientViewModel client in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(e => client.Id)</td>
+            <td>@Html.DisplayFor(e => client.Name)</td>
+            <td>@Html.DisplayFor(e => client.DocumentId)</td>
+        </tr>
+        }
+    </tbody>
+
+</table>

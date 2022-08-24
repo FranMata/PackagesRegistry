@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using PackagesRegistry.Models;
 using PackagesRegistry.Models.ViewModels;
 using System;
@@ -46,5 +47,14 @@ namespace PackagesRegistry.Controllers
             _context.SaveChanges();
             return View();
         }
+
+        public IActionResult PackagesInCustodyList()
+        {
+            List<PackagesInCustody> packages = _context
+                .PackagesInCustodies
+                .Include(e => e.Client)
+                .ToList();
+            return View(packages);
+        }        
     }
 }
