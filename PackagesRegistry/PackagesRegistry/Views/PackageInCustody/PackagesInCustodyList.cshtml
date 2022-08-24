@@ -7,6 +7,7 @@
 
     <thead>
         <tr>
+            <th>Id</th>
             <th>Id del Cliente</th>
             <th>Nombre del Cliente</th>
             <th>Id del Conductor</th>
@@ -22,7 +23,8 @@
         @foreach (PackagesInCustody package in Model)
         {
         <tr>
-            <td>@Html.DisplayFor(e => package.ClientId)</td>            
+            <td>@Html.DisplayFor(e => package.Id)</td>
+            <td>@Html.DisplayFor(e => package.ClientId)</td>
             <td>@Html.DisplayFor(e => package.Client.Name)</td>
             <td>@Html.DisplayFor(e => package.DriverId)</td>
             <td>@Html.DisplayFor(e => package.TrackingId)</td>

@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PackagesRegistry.Models;
 using PackagesRegistry.Models.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PackagesRegistry.Controllers
 {

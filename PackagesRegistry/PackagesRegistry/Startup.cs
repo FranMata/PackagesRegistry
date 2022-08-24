@@ -57,7 +57,7 @@ namespace PackagesRegistry
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=PackageInCustody}/{action=Index}/{id?}");
             });
         }
     }
