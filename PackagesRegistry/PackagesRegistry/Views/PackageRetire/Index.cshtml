@@ -1,0 +1,92 @@
+﻿@model PackagesRegistry.Models.ViewModels.PackagesRetiredViewModel;
+
+
+<h1>Ingresar paquete a custodia</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" id="PackageId" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="button" value="Validar datos" class="btn bg-primary" id="GetData" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DriverId" class="control-label"></label>
+                <input asp-for="DriverId" class="form-control" id="DriverId">
+                <span asp-validation-for="DriverId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TrackingId" class="control-label"></label>
+                <input asp-for="TrackingId" class="form-control" id="TrackingId"/>
+                <span asp-validation-for="TrackingId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" id="Description"/>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <input asp-for="ClientId" class="form-control" id="ClientId">
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input onclick="return confirm('Desea guardar los datos?');" type="submit" value="Crear" class="btn bg-primary" id="SaveBotton"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        const fieldsArray = ["DriverId", "TrackingId", "Description", "ClientId", "RetireDate", "SaveBotton"];
+
+        fieldsArray.forEach(e => $("#" + e).prop("readonly", true));
+
+        $("#GetData").click(function (e) {
+            e.preventDefault();
+
+            var id = $("#PackageId").val();
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetPackage")',
+                dataType: "json",
+                data: { id:id },
+                success: function (content) {
+                    $("#DriverId").val(content.driverId);
+                    $("#TrackingId").val(content.trackingId);
+                    $("#Description").val(content.description);
+                    $("#ClientId").val(content.clientId);
+                    $("#SaveBotton").prop("disabled", false);
+                },
+                error: function (error) {
+                    console.log(error);
+                    if (error.status == 404) {
+                        alert("No se ha encontrado el paquete");
+                        return;
+                    }
+                    alert("Algo salio mal");
+                }
+            })
+        });
+
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
